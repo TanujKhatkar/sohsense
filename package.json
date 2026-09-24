@@ -1,0 +1,32 @@
+{
+  "name": "sohsense",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:offline": "node tools/make-offline-app.mjs",
+    "build:all": "npm run build:offline && npm run build",
+    "preview": "vite preview --host",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "framer-motion": "^13.1.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "autoprefixer": "^10.5.4",
+    "oxlint": "^1.75.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.0",
+    "vite-plugin-pwa": "^1.3.0"
+  },
+  "description": "SOHSense - personal State of Health (SOH) meter for every EV car and scooter in India. No hardware needed. Installable PWA + offline single-file build."
+}

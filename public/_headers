@@ -1,0 +1,20 @@
+# Netlify response headers - also read from the publish directory (dist/)
+# Ensures the PWA manifest is served as JSON so Chrome/Edge allow install.
+
+/manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sw.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/
+  X-Content-Type-Options: nosniff

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+/* public/ holds generated artifacts (the 630 KB offline single-file build).
+   Excluding it keeps Tailwind from scanning that file and inflating the CSS. */
+@source not "../public";
+
+:root {
+  --sans: "Space Grotesk", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* { font-family: var(--sans); }
+.mono { font-family: var(--mono); }
+
+html, body { margin:0; padding:0; overscroll-behavior: none; }
+body { background: #0e1116; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #2a2f3a; border-radius: 10px; }
+
+/* Skeuomorphic utilities */
+.bezel-metal {
+  background: conic-gradient(from 0deg at 50% 50%, #8a8f98 0deg, #d1d5db 45deg, #6b7280 90deg, #e5e7eb 135deg, #9ca3af 180deg, #d1d5db 225deg, #6b7280 270deg, #a1a6af 315deg, #8a8f98 360deg);
+}
+.bezel-metal-car {
+  background: conic-gradient(from 0deg at 50% 50%, #2a2f3a 0deg, #4b5563 45deg, #1f242d 90deg, #6b7280 135deg, #374151 180deg, #4b5563 225deg, #1f242d 270deg, #3a414e 315deg, #2a2f3a 360deg);
+}
+.bezel-metal-scooter {
+  background: conic-gradient(from 0deg at 50% 50%, #c5c9d0 0deg, #f3f4f6 45deg, #9ca3af 90deg, #e5e7eb 135deg, #b8bec7 180deg, #f3f4f6 225deg, #9ca3af 270deg, #d1d5db 315deg, #c5c9d0 360deg);
+}
+.glass-highlight {
+  background: linear-gradient(115deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 18%, rgba(255,255,255,0) 40%);
+}

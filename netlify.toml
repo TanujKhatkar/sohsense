@@ -1,0 +1,23 @@
+# Netlify configuration — lives in the repo, so every deploy uses these settings.
+# This overrides whatever is set in the Netlify UI, which means deploys are
+# reproducible no matter who clicks what.
+
+[build]
+  # build:all regenerates the downloadable offline app first, then builds the site
+  command = "npm run build:all"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20.18.0"
+
+[build.processing]
+  # Turn OFF all post-processing. Two reasons:
+  #  1. Pretty URLs rewrites /SOHSense-Offline-App.html -> /sohsense-offline-app,
+  #     which strips the .html extension off the downloaded file.
+  #  2. Minification/injection can modify the single-file offline build, which
+  #     must stay byte-for-byte self-contained (zero external requests).
+  skip_processing = true
+
+# NOTE: no SPA catch-all redirect on purpose. The app has no URL-based
+# routing (navigation is React state only), and a /* rewrite could shadow
+# the downloadable file and the assets. Fewer moving parts, less to break.

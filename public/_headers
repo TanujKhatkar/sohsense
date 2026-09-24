@@ -18,3 +18,10 @@
 
 /
   X-Content-Type-Options: nosniff
+
+# The downloadable offline app: force a clean download with the .html
+# extension intact (some browsers otherwise try to render it inline).
+/SOHSense-Offline-App.html
+  Content-Type: text/html; charset=utf-8
+  Content-Disposition: attachment; filename="SOHSense-Offline-App.html"
+  Cache-Control: public, max-age=0, must-revalidate
